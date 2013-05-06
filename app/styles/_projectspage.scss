@@ -62,76 +62,103 @@
 
 .projects-container {
     clear:both;
+    width:100%;
 }
+
+// .project-item {
+//     // @include transition(transform .35s $bounce-in);
+//     @include transition(.35s $bounce-in all);
+//     // @include transition(position .5s ease-in);
+//     background:$bg;
+//     color: $accent-brite;
+//     float: left;
+//     margin:5px;
+//     text-align: center;
+//     font-size:30px;
+//     letter-spacing: -1px;
+//     font-weight: 300;
+//     width:270px;
+//     height:270px;
+//     &:hover {
+//         @include scale3d(1.08,1.08,1);
+//     }
+// }
+
 
 .project-item {
     // @include transition(transform .35s $bounce-in);
-    @include transition(.35s $bounce-in all);
     // @include transition(position .5s ease-in);
     background:$bg;
     color: $accent-brite;
-    float: left;
-    margin:5px;
     text-align: center;
+    margin:5px;
     font-size:30px;
     letter-spacing: -1px;
     font-weight: 300;
-    width:270px;
-    height:270px;
-    &:hover {
-        @include scale3d(1.08,1.08,1);
-    }
+    width:250px;
+    height:250px;
 }
 
 
 
-.project-item.two-one {
+.project-item.i21 {
     width:510px;
     height:250px;
 }
-.project-item.one-two {
+.project-item.i12 {
     width:250px;
     height:510px;
 }
-.project-item.two-two {
+.project-item.i22 {
     width:510px;
     height:510px;
 }
 
 
-.project-enter-setup,
-.project-leave-setup,
-.project-move-setup {
-  -webkit-transition: .5s ease-in-out all;
-  -moz-transition: .5s ease-in-out all;
-  -o-transition: .5s ease-in-out all;
-  transition: .5s ease-in-out all;
-  position:relative;
+.isotope-item {
+  z-index: 2;
 }
 
-.project-enter-setup {
-  @include translateY(-100px);
-    @include scale3d(0.55,0.55,1);
-  opacity:0;
-}
-.project-enter-setup.project-enter-start {
-  opacity:1;
-  @include translateY(0px);
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
 }
 
-.project-leave-setup {
-  left:0;
-  opacity:1;
-}
-.project-leave-setup.project-leave-start {
-  left:-10px;
-  opacity:0;
-    @include scale3d(0.55,0.55,1);
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
 }
 
-.project-move-setup {
-  opacity:0.5;
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
 }
-.project-move-setup.project-move-start {
-  opacity:1;
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
 }

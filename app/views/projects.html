@@ -21,7 +21,17 @@
 </div>
 
 <div class="projects-container">
-    <div ng-repeat="project in projects | filter: projectFilter" class="project-item" ng-animate="'project'">
+    <div ng-repeat="project in projects | filter: projectFilter" class="project-item i{{project.size}} type-{{project.type}}" >
         {{project.name}}
     </div>
+<!--     <div class="project-item">item 1</div>
+    <div class="project-item">item 2</div>
+    <div class="project-item">item 3</div>
+    <div class="project-item">item 4</div>
+    <div class="project-item">item 5</div>
+    <div class="project-item">item 6</div>
+    <div class="project-item">item 7</div>
+    <div class="project-item">item 8</div>
+    <div class="project-item">item 9</div>
+    <div class="project-item">item 10</div> -->
 </div>

@@ -22,6 +22,7 @@ angular.module('portfolioApp')
     $scope.projectFilter = undefined;
 
     $scope.setFilter = function(filterType){
+      $scope.iso.isotope({filter: '.type-'+ filterType})
       if($scope.projectFilter !== filterType){
         $scope.projectFilter = filterType;
       }
@@ -31,16 +32,16 @@ angular.module('portfolioApp')
     };
 
     $scope.projects = Projects.get();
-    $scope.addItem = function () {
-      $timeout(function(){
-        $scope.projects.push({"name": "fucker", "type": "desktop", "size": "11"});
-        $scope.addItem();
-      }, 5000);
-    }
+    $timeout(function(){
+      $scope.iso = $('.projects-container').isotope({
+        itemSelector: '.project-item',
+        // layoutMode: 'masonry',
+        masonry: {
+          columnWidth: 260
+        }
+      });
 
-    $scope.addItem();
-
-
+    },1);
     // console.log($scope.projects);
 
   }]);

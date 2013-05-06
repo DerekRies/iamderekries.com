@@ -8,57 +8,57 @@ angular.module('portfolioApp')
     var items = [
       {
         'name': 'Grab',
-        'type': 'Game',
+        'type': 'game',
         'size': '22'
       },
       {
         'name': 'XOPL',
-        'type': 'Web',
+        'type': 'web',
         'size': '12'
       },
       {
         'name': 'Something',
-        'type': 'Lab',
+        'type': 'lab',
         'size': '22'
       },
       {
         'name': 'Adsupervisors',
-        'type': 'Web',
+        'type': 'web',
         'size': '12'
       },
       {
         'name': 'OnTime',
-        'type': 'Web',
+        'type': 'web',
         'size': '11'
       },
       {
         'name': 'Greek',
-        'type': 'Tool',
+        'type': 'tool',
         'size': '11'
       },
       {
         'name': 'XRAT',
-        'type': 'Web',
+        'type': 'web',
         'size': '21'
       },
       {
         'name': 'AngularSublime',
-        'type': 'Tool',
+        'type': 'tool',
         'size': '11'
       },
       {
         'name': 'Something',
-        'type': 'Lab',
+        'type': 'lab',
         'size': '11'
       },
       {
         'name': 'Something',
-        'type': 'Lab',
+        'type': 'lab',
         'size': '11'
       },
       {
         'name': 'Something',
-        'type': 'Mobile',
+        'type': 'mobile',
         'size': '11'
       }
     ];
