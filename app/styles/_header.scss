@@ -1,0 +1,46 @@
+.header {
+    z-index: 10;
+    position:fixed;
+    top:0;
+    width: 100%;
+    background: $bg;
+    color: $font;
+    border-bottom:7px solid $accent;
+}
+
+.header-spacer {
+    height:85px;
+}
+
+.header-inner {
+    padding:20px 0px;
+
+}
+
+.navbar {
+    font-size:14px;
+    list-style-type: none;
+    li {
+        display:inline;
+    }
+    a {
+        @include transition(color .35s ease-in-out);
+        color: darken($font, 30%);
+        text-decoration: none;
+        padding:10px 20px;
+        &:hover {
+            color: $accent;
+        }
+        line-height:20px;
+    }
+    a.active {
+        font-weight:500;
+        color:$font;
+    }
+    a.brand {
+        color: $font;
+        font-size:18px;
+        font-weight:700;
+        margin-right:10px;
+    }
+}

@@ -1,0 +1,10 @@
+/* Colors and other utilities */
+$bodybg1: #bd6e58;
+$bodybg2: #7f3b3f;
+$bodybg2: #34152a;
+$bg: #1e1e1e;
+$accent: #b1135f;
+$accent-brite: adjust-saturation(lighten($accent, 10%), 10%);
+$font: #FFF;
+
+$bounce-in: cubic-bezier(0.310, 0.390, 0.210, 1.650);

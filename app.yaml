@@ -1,0 +1,78 @@
+application: portfolio
+version: dev
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?tests$
+- ^(.*/)?test$
+- ^test/(.*/)?
+- ^COPYING.LESSER
+- ^README\..*
+- \.gitignore
+- ^\.git/.*
+- \.*\.lint$
+- ^fabfile\.py
+- ^testrunner\.py
+- ^Gruntfile\.js
+- ^node_modules/(.*/)?
+- ^(.*)\.scss$
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+
+- url: /\.tmp
+  static_dir: \.tmp
+
+- url: /scripts
+  mime_type: text/javascript
+  static_dir: dist/scripts
+
+- url: /components
+  static_dir: dist/components
+
+- url: /views
+  static_dir: dist/views
+
+- url: /styles
+  mime_type: text/css
+  static_dir: dist/styles
+
+- url: /img/(.*\.(gif|png|jpg))
+  static_files: dist/img/\1
+  upload: dist/img/(.*\.(gif|png|jpg))
+
+# - url: /admin/.*
+#   script: main.app
+#   login: admin
+
+- url: /api/(.*)
+  script: main.app
+
+- url: .*
+  static_files: dist/index.html
+  upload: dist/index.html
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: latest
+
+- name: pycrypto
+  version: "2.6"

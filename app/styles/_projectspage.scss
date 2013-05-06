@@ -1,0 +1,137 @@
+
+.icon-bar {
+    margin-left: 60px;
+    display:inline;
+}
+
+.link-icon {
+    @include transition(all 0.35s $bounce-in);
+    display:inline-block;
+    margin: 5px 0px;
+    padding:10px 25px;
+    text-align: center;
+    color: $font;
+    text-decoration: none;
+    background: rgba(0,0,0,0);
+    i {
+        display:block;
+        font-size:30px;
+        margin-bottom:5px;
+    }
+    span {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size:14px;
+    }
+    &:hover {
+        background: $bg;
+        color: $accent-brite;
+        // padding:14px 19px;
+        @include translateY(3px);
+    }
+}
+
+.link-icon.active {
+    background: $bg;
+    color: $accent-brite;
+    @include translateY(3px);
+}
+
+.searchbar {
+    @include transition(all .35s ease-in);
+    float: right;
+    margin-top: 30px;
+    display:inline-block;
+    background:#000;
+    opacity:.3;
+    padding:15px 30px;
+    font-size:24px;
+    @include border-radius(30px);
+}
+
+.searchbar.extended {
+    opacity:.6;
+    width: 500px;
+}
+
+.search-text {
+    display:inline;
+    margin-left:20px;
+    font-weight:300;
+}
+
+.projects-container {
+    clear:both;
+}
+
+.project-item {
+    // @include transition(transform .35s $bounce-in);
+    @include transition(.35s $bounce-in all);
+    // @include transition(position .5s ease-in);
+    background:$bg;
+    color: $accent-brite;
+    float: left;
+    margin:5px;
+    text-align: center;
+    font-size:30px;
+    letter-spacing: -1px;
+    font-weight: 300;
+    width:270px;
+    height:270px;
+    &:hover {
+        @include scale3d(1.08,1.08,1);
+    }
+}
+
+
+
+.project-item.two-one {
+    width:510px;
+    height:250px;
+}
+.project-item.one-two {
+    width:250px;
+    height:510px;
+}
+.project-item.two-two {
+    width:510px;
+    height:510px;
+}
+
+
+.project-enter-setup,
+.project-leave-setup,
+.project-move-setup {
+  -webkit-transition: .5s ease-in-out all;
+  -moz-transition: .5s ease-in-out all;
+  -o-transition: .5s ease-in-out all;
+  transition: .5s ease-in-out all;
+  position:relative;
+}
+
+.project-enter-setup {
+  @include translateY(-100px);
+    @include scale3d(0.55,0.55,1);
+  opacity:0;
+}
+.project-enter-setup.project-enter-start {
+  opacity:1;
+  @include translateY(0px);
+}
+
+.project-leave-setup {
+  left:0;
+  opacity:1;
+}
+.project-leave-setup.project-leave-start {
+  left:-10px;
+  opacity:0;
+    @include scale3d(0.55,0.55,1);
+}
+
+.project-move-setup {
+  opacity:0.5;
+}
+.project-move-setup.project-move-start {
+  opacity:1;
+}

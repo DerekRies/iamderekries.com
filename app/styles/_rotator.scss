@@ -1,0 +1,12 @@
+.rotator-component {
+    @include transition(all .35s $bounce-in);
+    display:inline-block;
+    background: $bg;
+    color:$accent;
+    padding:10px 20px;
+    font-size:24px;
+    &:hover {
+        opacity: 0;
+        @include translate3d(0,30px,0);
+    }
+}
