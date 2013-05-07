@@ -21,7 +21,7 @@
 </div>
 
 <div class="projects-container">
-    <div ng-repeat="project in projects | filter: projectFilter" class="project-item i{{project.size}} type-{{project.type}}" >
+    <div ng-repeat="project in projects" class="project-item i{{project.size}} type-{{project.type}}" >
         {{project.name}}
     </div>
 <!--     <div class="project-item">item 1</div>

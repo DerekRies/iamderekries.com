@@ -19,7 +19,11 @@ angular.module('portfolioApp', [])
           templateUrl: 'views/about.html',
           controller: 'AboutCtrl'
         })
+        .when('/404', {
+          templateUrl: 'views/404.html',
+          controller: '404Ctrl'
+        })
         .otherwise({
-          redirectTo: '/'
+          redirectTo: '/404'
         });
     }]);

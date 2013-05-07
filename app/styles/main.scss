@@ -13,6 +13,7 @@ body {
     font-weight: 300;
     background: linear-gradient(color-stops($bodybg1, $bodybg2)) fixed;
     color: $font;
+    font-size:20px;
 }
 
 h1,h2,h3,h4,h5 {
@@ -67,7 +68,7 @@ h1,h2,h3,h4,h5 {
 
 .container {
     width:90%;
-    min-width:1600px;
+    // min-width:1600px;
     margin:0 auto;
 }
 

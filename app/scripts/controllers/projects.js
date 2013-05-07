@@ -22,12 +22,13 @@ angular.module('portfolioApp')
     $scope.projectFilter = undefined;
 
     $scope.setFilter = function(filterType){
-      $scope.iso.isotope({filter: '.type-'+ filterType})
       if($scope.projectFilter !== filterType){
         $scope.projectFilter = filterType;
+        $scope.iso.isotope({filter: '.type-'+ filterType});
       }
       else{
         $scope.projectFilter = undefined;
+        $scope.iso.isotope({filter: ''})
       }
     };
 
