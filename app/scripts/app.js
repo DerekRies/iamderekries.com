@@ -15,6 +15,10 @@ angular.module('portfolioApp', [])
           templateUrl: 'views/projects.html',
           controller: 'ProjectsCtrl'
         })
+        .when('/projects/:projectId', {
+          templateUrl: 'views/singleproject.html',
+          controller: 'SingleProjectCtrl'
+        })
         .when('/about', {
           templateUrl: 'views/about.html',
           controller: 'AboutCtrl'

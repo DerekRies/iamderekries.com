@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('portfolioApp')
-  .controller('ProjectsCtrl', ['$scope', '$timeout', 'Projects',
-    function ($scope, $timeout, Projects) {
+  .controller('ProjectsCtrl', ['$scope', '$timeout', '$location', 'Projects',
+    function ($scope, $timeout, $location, Projects) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -28,9 +28,14 @@ angular.module('portfolioApp')
       }
       else{
         $scope.projectFilter = undefined;
-        $scope.iso.isotope({filter: ''})
+        $scope.iso.isotope({filter: ''});
       }
     };
+
+    $scope.goTo = function (loc) {
+      $location.path('/projects/'+loc);
+    };
+
 
     $scope.projects = Projects.get();
     $timeout(function(){
@@ -38,7 +43,7 @@ angular.module('portfolioApp')
         itemSelector: '.project-item',
         // layoutMode: 'masonry',
         masonry: {
-          columnWidth: 260
+          columnWidth: 270
         }
       });
 

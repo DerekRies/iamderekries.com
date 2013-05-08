@@ -66,10 +66,17 @@ h1,h2,h3,h4,h5 {
     font-size:32px;
 }
 
+.btn-container {
+  margin:50px 0;
+}
+
 .container {
     width:90%;
     // min-width:1600px;
+    position: absolute;
     margin:0 auto;
+    left: 0;
+    right: 0;
 }
 
 .page-header {
@@ -82,4 +89,55 @@ h1.page-title {
     font-weight:100;
     margin-bottom:0px;
     display:inline;
+
+    small {
+      display: block;
+      font-size:20px;
+      font-weight:500;
+      margin-bottom:50px;
+    }
 }
+
+.fill-page {
+  width:100%;
+}
+
+/* Page Animations */
+.view-enter-setup, .view-leave-setup {
+  @include transition(0.8s all ease-in-out);
+  position:absolute;
+  .fill-page {
+    height:100%;
+  }
+  .hidden-animate {
+    opacity:0;
+  }
+}
+
+.view-enter-setup {
+  opacity:0;
+  top: -500px;
+  @include translate3d(0,0,0);
+  // @include translateX(75%);
+}
+.view-enter-setup.view-enter-start {
+  // @include translateY(0px);
+  top: 0px;
+  opacity:1;
+  @include translate3d(0,0,0);
+}
+
+.view-leave-setup {
+  opacity:1;
+  top: 0px;
+  @include translate3d(0,0,0);
+}
+.view-leave-setup.view-leave-start {
+  // @include translateX(-75%);
+  opacity:0;
+  top:1000px;
+  @include translate3d(0,0,0);
+}
+
+
+/* Fallback for the moment */

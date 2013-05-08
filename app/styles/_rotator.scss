@@ -1,12 +1,33 @@
+.rotator-parent {
+  display:inline-block;
+  // max-height:60px;
+  // overflow:hidden;
+}
+
 .rotator-component {
+  margin-top:30px;
     @include transition(all .35s $bounce-in);
     display:inline-block;
+    width: auto;
     background: $bg;
     color:$accent;
     padding:10px 20px;
     font-size:24px;
+    text-align: center;
     &:hover {
-        opacity: 0;
-        @include translate3d(0,30px,0);
+      opacity: 0;
+      @include translate3d(0,30px,0);
     }
 }
+
+.rotator-component.out {
+  opacity: 0;
+  @include translate3d(0,-30px,0);
+}
+
+.rotator-component.in {
+  opacity: 1;
+  @include translate3d(0,30px,0);
+}
+
+

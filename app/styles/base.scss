@@ -1,4 +1,6 @@
 /* Colors and other utilities */
+
+/* Purple Pink Color Theme */
 $bodybg1: #bd6e58;
 $bodybg2: #7f3b3f;
 $bodybg2: #34152a;
@@ -6,5 +8,15 @@ $bg: #1e1e1e;
 $accent: #b1135f;
 $accent-brite: adjust-saturation(lighten($accent, 10%), 10%);
 $font: #FFF;
+$font-darker: #999;
 
 $bounce-in: cubic-bezier(0.310, 0.390, 0.210, 1.650);
+
+
+/* Green Color Theme */
+
+// $bodybg1: #0CA685;
+// $bodybg2: #418181;
+// $bodybg2: #003D34;
+// $accent: #f2e205;
+// $accent-brite: adjust-saturation(lighten($accent, 10%), 10%);

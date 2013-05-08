@@ -1,37 +1,39 @@
-<div class="page-header">
-    <h1 class="page-title">Projects</h1>
+<div class="fill-page">
+  <div class="page-header">
+      <h1 class="page-title">Projects</h1>
 
-    <div class="icon-bar">
-        <a href="" ng-click="setFilter('web')" class="link-icon" ng-class="{active: projectFilter == 'web'}">
-            <i class="icon-globe"></i><span>Web Apps</span></a>
+      <div class="icon-bar">
+          <a href="" ng-click="setFilter('web')" class="link-icon" ng-class="{active: projectFilter == 'web'}">
+              <i class="icon-globe"></i><span>Web Apps</span></a>
 
-        <a href="" ng-click="setFilter('lab')" class="link-icon" ng-class="{active: projectFilter == 'lab'}"><i class="icon-beaker"></i><span>Labs</span></a>
-        <a href="" ng-click="setFilter('game')" class="link-icon" ng-class="{active: projectFilter == 'game'}"><i class="icon-trophy"></i><span>Games</span></a>
-        <a href="" ng-click="setFilter('tool')" class="link-icon" ng-class="{active: projectFilter == 'tool'}"><i class="icon-wrench"></i><span>Tools</span></a>
-        <a href="" ng-click="setFilter('desktop')" class="link-icon" ng-class="{active: projectFilter == 'desktop'}"><i class="icon-desktop"></i><span>Desktop</span></a>
-        <a href="" ng-click="setFilter('mobile')" class="link-icon" ng-class="{active: projectFilter == 'mobile'}"><i class="icon-tablet"></i><span>Mobile</span></a>
-        <a href="" ng-click="setFilter('lib')" class="link-icon" ng-class="{active: projectFilter == 'lib'}"><i class="icon-book"></i><span>Libraries</span></a>
-    </div>
+          <a href="" ng-click="setFilter('lab')" class="link-icon" ng-class="{active: projectFilter == 'lab'}"><i class="icon-beaker"></i><span>Labs</span></a>
+          <a href="" ng-click="setFilter('game')" class="link-icon" ng-class="{active: projectFilter == 'game'}"><i class="icon-trophy"></i><span>Games</span></a>
+          <a href="" ng-click="setFilter('tool')" class="link-icon" ng-class="{active: projectFilter == 'tool'}"><i class="icon-wrench"></i><span>Tools</span></a>
+          <a href="" ng-click="setFilter('desktop')" class="link-icon" ng-class="{active: projectFilter == 'desktop'}"><i class="icon-desktop"></i><span>Desktop</span></a>
+          <a href="" ng-click="setFilter('mobile')" class="link-icon" ng-class="{active: projectFilter == 'mobile'}"><i class="icon-tablet"></i><span>Mobile</span></a>
+          <a href="" ng-click="setFilter('lib')" class="link-icon" ng-class="{active: projectFilter == 'lib'}"><i class="icon-book"></i><span>Libraries</span></a>
+      </div>
 
-    <div class="searchbar" ng-class="{extended: searchExtended}" ng-click="extendSearch()">
-        <i class="icon-search"></i>
-        <!-- <div ng-show="searchExtended" class="search-text"></div> -->
-    </div>
+      <div class="searchbar" ng-class="{extended: searchExtended}" ng-click="extendSearch()">
+          <i class="icon-search"></i>
+          <!-- <div ng-show="searchExtended" class="search-text"></div> -->
+      </div>
 
-</div>
+  </div>
 
-<div class="projects-container">
-    <div ng-repeat="project in projects" class="project-item i{{project.size}} type-{{project.type}}" >
-        {{project.name}}
-    </div>
-<!--     <div class="project-item">item 1</div>
-    <div class="project-item">item 2</div>
-    <div class="project-item">item 3</div>
-    <div class="project-item">item 4</div>
-    <div class="project-item">item 5</div>
-    <div class="project-item">item 6</div>
-    <div class="project-item">item 7</div>
-    <div class="project-item">item 8</div>
-    <div class="project-item">item 9</div>
-    <div class="project-item">item 10</div> -->
+  <div class="projects-container">
+      <div ng-repeat="project in projects" class="project-item i{{project.size}} type-{{project.type}}" ng-click="goTo(project.name)">
+          {{project.name}}
+      </div>
+  <!--     <div class="project-item">item 1</div>
+      <div class="project-item">item 2</div>
+      <div class="project-item">item 3</div>
+      <div class="project-item">item 4</div>
+      <div class="project-item">item 5</div>
+      <div class="project-item">item 6</div>
+      <div class="project-item">item 7</div>
+      <div class="project-item">item 8</div>
+      <div class="project-item">item 9</div>
+      <div class="project-item">item 10</div> -->
+  </div>
 </div>
