@@ -5,7 +5,7 @@ html, body {
     height:100%;
     margin: 0;
     padding: 0;
-    // overflow:hidden;
+    overflow-x:hidden;
 }
 
 body {
@@ -136,6 +136,45 @@ h1.page-title {
   // @include translateX(-75%);
   opacity:0;
   top:1000px;
+  @include translate3d(0,0,0);
+}
+
+
+/* Second Page Transition */
+
+.view2-enter-setup, .view2-leave-setup {
+  @include transition(0.85s all ease-in-out);
+  position:absolute;
+  .fill-page {
+    height:100%;
+  }
+  .hidden-animate {
+    opacity:0;
+  }
+}
+
+.view2-enter-setup {
+  opacity:0;
+  right: -500px;
+  @include translate3d(0,0,0);
+  // @include translateX(75%);
+}
+.view2-enter-setup.view2-enter-start {
+  // @include translateY(0px);
+  right: 0px;
+  opacity:1;
+  @include translate3d(0,0,0);
+}
+
+.view2-leave-setup {
+  opacity:1;
+  right: 0px;
+  @include translate3d(0,0,0);
+}
+.view2-leave-setup.view2-leave-start {
+  // @include translateX(-75%);
+  opacity:0;
+  right:1000px;
   @include translate3d(0,0,0);
 }
 
