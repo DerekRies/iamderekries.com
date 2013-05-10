@@ -7,6 +7,7 @@
 
 .rotator-component {
   margin-top:30px auto auto auto;
+  white-space: nowrap;
   @include transition(all .35s $bounce-in);
   display: block;
   background: $bg;
