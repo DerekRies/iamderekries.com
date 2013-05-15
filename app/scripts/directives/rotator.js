@@ -39,7 +39,7 @@ angular.module('portfolioApp')
               btm.removeClass('btm').addClass('mid');
               top.html(scope.items[scope.r].text);
               prev =  (scope.r - 1) >= 0 ? scope.r - 1 : scope.items.length - 1;
-              console.log(scope.items[prev]);
+              // console.log(scope.items[prev]);
               element.css('width', scope.items[prev].width + 'px');
               scope.r = (scope.r >= scope.items.length - 1) ? 0 : scope.r + 1;
               rotate();

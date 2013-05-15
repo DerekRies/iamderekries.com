@@ -85,7 +85,7 @@ h1,h2,h3,h4,h5 {
 }
 
 h1.page-title {
-    font-size:80px;
+    font-size:85px;
     font-weight:100;
     margin-bottom:0px;
     display:inline;
@@ -93,7 +93,7 @@ h1.page-title {
     small {
       display: block;
       font-size:20px;
-      font-weight:500;
+      font-weight:300;
       margin-bottom:50px;
     }
 }
@@ -156,6 +156,7 @@ h1.page-title {
 .view2-enter-setup {
   opacity:0;
   right: -500px;
+  @include scale3d(0.5,0.5,1);
   @include translate3d(0,0,0);
   // @include translateX(75%);
 }
@@ -163,6 +164,7 @@ h1.page-title {
   // @include translateY(0px);
   right: 0px;
   opacity:1;
+  @include scale3d(1,1,1);
   @include translate3d(0,0,0);
 }
 
