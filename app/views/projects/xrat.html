@@ -1,0 +1,11 @@
+<p>XRAT (Xss Remote Access Tool), is a project that aims to provide interactive control of a user's browser when they become hooked (load a piece of javascript we've written). Basically, people that view web pages that have our embedded javascript on them, become a node in our "Javascript Botnet" and expose a series of executable commands to the server we are running. A Node gets any commands waiting for it by constantly checking in with the server (polling), and asking if there are any commands for a node with the correct node id.</p>
+
+<p><strong>In plain terms, XRAT lets us control peoples' browsers with javascript remotely.</strong></p>
+
+<h2>The Architecture</h2>
+
+<p><strong>The Server</strong> is a small bit of python code that runs on top of the Google App Engine service. This means it is entirely free for usage under a generous quota. Basically, the server bit is comprised of a couple request handlers for rendering phishing pages, an API for adding and completing commands, and a small bit of logic that identifies and keeps Nodes in memory and can attach commands to them.</p>
+
+<p><strong>The Attacker Client</strong> is the admin restricted dashboard. It provides an overview of all the nodes currently connected to the botnet, as well as a series of command modules that can be activated and sent to the server and from the server to a node or all nodes.</p>
+
+<p><strong>The Victim Client</strong> is the javascript that makes up a node, and exposes a whole host of commands to the server. A victim client only has knowledge of itself, and the server side representation of itself.</p>

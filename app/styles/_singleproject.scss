@@ -1,5 +1,5 @@
 .project-details-page {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .project-media-placeholder {
@@ -10,6 +10,23 @@
     padding:300px 0;
 
 }
+
+
+.project-desc {
+  max-height: 350px;
+  min-height:250px;
+  overflow:auto;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size:14px;
+  background:$bg;
+  padding:10px 15px;;
+  margin:5px;
+  color: $font;
+}
+
 
 .fixed-bottom-button {
     @include transition(all .35s $bounce-in);
