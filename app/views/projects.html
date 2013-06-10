@@ -22,8 +22,8 @@
   </div>
 
   <div class="projects-container">
-      <div ng-repeat="project in projects" class="project-item i{{project.size}} type-{{project.type}}" ng-click="goTo(project.name)">
-          {{project.name}}
+      <div ng-repeat="project in projects" class="project-item i{{project.size}} type-{{project.type}} {{project.thumb}}" ng-click="goTo(project.name)">
+          <span ng-hide="project.thumb">{{project.name}}</span>
       </div>
   </div>
 </div>
