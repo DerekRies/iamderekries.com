@@ -13,18 +13,31 @@
 
 
 .project-desc {
-  max-height: 350px;
-  min-height:250px;
-  overflow:auto;
+  max-height: 415px;
+  min-height: 250px;
+  overflow: auto;
+  line-height: 26px;
+}
+
+.project-tag-container {
+  margin: 0 0 20px 0;
 }
 
 .project-tag {
   display: inline-block;
-  font-size:14px;
+  font-size:12px;
   background:$bg;
   padding:10px 15px;;
   margin:5px;
   color: $font;
+}
+
+.project-media img, .project-videos video {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  max-height: 750px;
 }
 
 

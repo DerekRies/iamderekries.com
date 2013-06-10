@@ -5,26 +5,31 @@
         {{project.name}}
         <small>{{project.tagline}}</small>
       </h1>
+      <div class="project-tag-container">
+        <span class="project-tag" ng-repeat="tech in project.technologies">{{tech}}</span>
+      </div>
 
       <div class="project-desc" ng-include src="project.templateUrl"></div>
 
-      <h5>Technologies:</h5>
-      <p>
-        <span class="project-tag" ng-repeat="tech in project.technologies">{{tech}}</span>
-
-      </p>
       <!-- <p>Angular.js, Google App Engine, Python, JavaScript, Yeoman, Bootstrap</p> -->
       <div class="btn-container">
-        <a href="{{project.link}}" class="bgbtn">View Project Live <i class="icon-circle-arrow-right"></i></a>
+        <a href="{{project.link}}" ng-show="project.link" class="bgbtn">View Project Live <i class="icon-circle-arrow-right"></i></a>
         <a href="{{project.blog}}" ng-show="project.blog" class="bgbtn">Read More <i class="icon-circle-arrow-right"></i></a>
-        <a href="{{project.github}}" ng-show="project.github" class="bgbtn">Github <i class="icon-circle-arrow-right"></i></a>
+        <a href="{{project.github}}" ng-show="project.github" class="bgbtn"><i class="icon-github"></i> Github <i class="icon-circle-arrow-right"></i></a>
       </div>
     </div>
     <div class="span6">
       <h2>Media</h2>
-      <div class="project-media-placeholder">
-        <h2>Screenshot</h2>
+      <div class="project-media" ng-show="project.media.length">
+        <img ng-repeat="media in project.media" ng-src="/img/{{media}}" alt="">
       </div>
+      <div class="project-videos" ng-show="project.videos.length">
+        <video autoplay="autoplay" loop="loop">
+          <source ng-repeat="video in project.videos" ng-src="/video/{{video.src}}" type="{{video.type}}"></source>
+        </video>
+      </div>
+
+      <!-- <img ng-show="project.media.length" src="/img/optimised.gif" width="680" alt=""> -->
     </div>
   </div>
 
