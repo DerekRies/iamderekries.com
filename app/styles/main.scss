@@ -20,6 +20,19 @@ h1,h2,h3,h4,h5 {
     font-family: 'Roboto', sans-serif;
 }
 
+.center-image {
+  display:block;
+  margin: 0 auto;
+}
+
+.info-box a {
+  color: #FFF;
+  font-weight: 300;
+  &:visited {
+    color: #FFF;
+  }
+}
+
 
 ::selection {
   background: $accent
