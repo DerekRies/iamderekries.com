@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('portfolioApp')
-  .factory('Projects', [function() {
+  .factory('Projects', ['$location','$routeParams',
+    function() {
     // Service logic
     // ...
 
@@ -10,8 +11,8 @@ angular.module('portfolioApp')
         'name': 'Grab',
         'type': 'game',
         'size': '22',
-        'thumb': '',
-        'media': [],
+        'thumb': 'grab',
+        'media': ['grab1.png'],
         'tagline': 'An Android, iOS, Linux, and Windows Game',
         'description': 'nothing here yet',
         'templateUrl': 'views/projects/grab.html',
@@ -24,6 +25,7 @@ angular.module('portfolioApp')
         'name': 'Grab1k',
         'type': 'lab',
         'size': '11',
+        'thumb': 'grab1k',
         'media': ['grab1.jpg', 'grab2.jpg'],
         'tagline': 'A Game written in 1024 Bytes of JavaScript',
         'description': 'nothing here yet',
@@ -47,23 +49,23 @@ angular.module('portfolioApp')
         'templateUrl': 'views/projects/xopl.html',
         'technologies': ['Angularjs', 'Google App Engine', 'Python', 'Javascript', 'Bootstrap']
       },
-      {
-        'name': 'Something',
-        'type': 'lab',
-        'size': '12',
-        'media': [],
-        'tagline': 'nothing',
-        'description': 'nothing here yet',
-        'link': 'http://google.com',
-        'blog': undefined,
-        'github': 'https://github.com/DerekRies',
-        'technologies': ['Angularjs', 'Google App Engine', 'Python', 'Javascript', 'Yeoman', 'Bootstrap']
-      },
+      // {
+      //   'name': 'Something',
+      //   'type': 'lab',
+      //   'size': '12',
+      //   'media': [],
+      //   'tagline': 'nothing',
+      //   'description': 'nothing here yet',
+      //   'link': 'http://google.com',
+      //   'blog': undefined,
+      //   'github': 'https://github.com/DerekRies',
+      //   'technologies': ['Angularjs', 'Google App Engine', 'Python', 'Javascript', 'Yeoman', 'Bootstrap']
+      // },
       {
         'name': 'Adsupervisors',
         'type': 'web',
         'size': '12',
-        'thumb': '',
+        'thumb': 'adsupervisors',
         'media': ['adsupervisors1.png', 'adsupervisors2.jpg', 'adsupervisors3.png'],
         'tagline': 'A Third Party Traffic Monitor',
         'description': 'nothing here yet',
@@ -119,6 +121,7 @@ angular.module('portfolioApp')
         'name': 'XRAT',
         'type': 'web',
         'size': '21',
+        'thumb': 'xrat',
         'media': ['xrat1.png', 'xrat2.png', 'xrat3.png'],
         'tagline': 'Javascript Remote Admin Tool (XSS Botnet)',
         'description': 'nothing here yet',
@@ -164,7 +167,7 @@ angular.module('portfolioApp')
         'media': ['rng.png'],
         'tagline': 'A Mobile Application Built With Web Technologies',
         'description': 'nothing here yet',
-        'link': 'http://google.com',
+        'link': 'http://dev.rngapp.appspot.com',
         'blog': undefined,
         'templateUrl': 'views/projects/rng.html',
         'github': 'http://github.com/DerekRies',
@@ -174,6 +177,7 @@ angular.module('portfolioApp')
         'name': 'Angular-Notifications',
         'type': 'lib',
         'size': '11',
+        'thumb': 'angularnoti',
         'media': [],
         'tagline': 'An Angular-Component for Doing Notifications',
         'description': 'nothing here yet',
@@ -187,7 +191,7 @@ angular.module('portfolioApp')
 
     // Public API here
     return {
-      get: function(id) {
+      get: function (id) {
         if(typeof id === 'undefined'){
           return items;
         }
@@ -195,15 +199,30 @@ angular.module('portfolioApp')
           return this.getById(id);
         }
       },
-      getById: function(id){
+      getLength: function () {
+        return items.length;
+      },
+      getById: function (id) {
         return items[id];
       },
-      getByName: function(name){
+      getIndex: function (key, value) {
         for(var i = 0, l = items.length ; i < l ; i++){
-          if(items[i].name === name){
-            return items[i];
+          if(items[i][key] === value){
+            return i;
           }
         }
+        return -1;
+      },
+      getByName: function (name) {
+        var index = this.getIndex('name', name);
+        if(index !== -1){
+          return items[index];
+        }
+        // for(var i = 0, l = items.length ; i < l ; i++){
+        //   if(items[i].name === name){
+        //     return items[i];
+        //   }
+        // }
         return false;
       }
     };

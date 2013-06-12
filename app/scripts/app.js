@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('portfolioApp', [])
+angular.module('portfolioApp', ['ngMobile', 'angular-carousel'])
   .config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
 
@@ -28,6 +28,13 @@ angular.module('portfolioApp', [])
           controller: '404Ctrl'
         })
         .otherwise({
-          redirectTo: '/404'
+          redirectTo: '/'
         });
+    }])
+  .run(['$rootScope',function($rootScope) {
+
+      // $(document).keydown(function(e){
+      //   console.log(e.keyCode);
+      //   // $rootScope.$broadcast('nextProject', {})
+      // });
     }]);

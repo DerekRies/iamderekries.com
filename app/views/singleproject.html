@@ -21,15 +21,22 @@
     <div class="span6">
       <h2>Media</h2>
       <div class="project-media" ng-show="project.media.length">
-        <img ng-repeat="media in project.media" ng-src="/img/{{media}}" alt="">
+        <ul rn-carousel rn-carousel-index="currentPicture">
+          <li ng-repeat="media in project.media">
+            <img ng-src="/img/{{media}}" alt="">
+          </li>
+        </ul>
+        <div class="carousel-btn-container" ng-show="project.media.length > 1">
+          <a href="" class="bgbtn small" ng-click="prevPicture()">Prev</a>
+          <a href="" class="bgbtn small" ng-click="nextPicture()">Next</a>
+        </div>
+        <!-- <img ng-repeat="media in project.media" ng-src="/img/{{media}}" alt=""> -->
       </div>
       <div class="project-videos" ng-show="project.videos.length">
         <video autoplay="autoplay" loop="loop">
           <source ng-repeat="video in project.videos" ng-src="/video/{{video.src}}" type="{{video.type}}"></source>
         </video>
       </div>
-
-      <!-- <img ng-show="project.media.length" src="/img/optimised.gif" width="680" alt=""> -->
     </div>
   </div>
 
